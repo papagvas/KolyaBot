@@ -2,5 +2,6 @@
 with nixpkgs;
 haskell.lib.buildStackProject {
   name = "KolyaBot";
-  ghc = haskell.compiler.ghc902;
+  buildInputs = [ zlib ];
+  ghc = haskell.compiler.ghc925;
 }

@@ -9,9 +9,9 @@ version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/papagvas/KolyaBot#readme>
 homepage:       https://github.com/papagvas/KolyaBot#readme
 bug-reports:    https://github.com/papagvas/KolyaBot/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2023 Author name here
+author:         Matthew Gvasalia
+maintainer:     papagvasexy@gmail.com
+copyright:      2023 Matthew Gvasalia
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -30,13 +30,31 @@ library
       Paths_KolyaBot
   hs-source-dirs:
       src
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  default-extensions:
+      DataKinds
+      FlexibleContexts
+      GADTs
+      LambdaCase
+      PolyKinds
+      RankNTypes
+      ScopedTypeVariables
+      TypeApplications
+      TypeOperators
+      TypeFamilies
+      BlockArguments
+      OverloadedStrings
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -flate-specialise -fspecialise-aggressively -fplugin=Polysemy.Plugin
   build-depends:
-      base
+      base >=4.9
+    , calamity
+    , data-default
+    , data-flags
     , di
+    , di-polysemy
     , generic-lens
     , lens
     , polysemy
+    , polysemy-plugin
     , text
     , text-show
   default-language: Haskell2010
@@ -47,14 +65,32 @@ executable KolyaBot-exe
       Paths_KolyaBot
   hs-source-dirs:
       app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  default-extensions:
+      DataKinds
+      FlexibleContexts
+      GADTs
+      LambdaCase
+      PolyKinds
+      RankNTypes
+      ScopedTypeVariables
+      TypeApplications
+      TypeOperators
+      TypeFamilies
+      BlockArguments
+      OverloadedStrings
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -flate-specialise -fspecialise-aggressively -fplugin=Polysemy.Plugin -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       KolyaBot
-    , base
+    , base >=4.9
+    , calamity
+    , data-default
+    , data-flags
     , di
+    , di-polysemy
     , generic-lens
     , lens
     , polysemy
+    , polysemy-plugin
     , text
     , text-show
   default-language: Haskell2010
@@ -66,14 +102,32 @@ test-suite KolyaBot-test
       Paths_KolyaBot
   hs-source-dirs:
       test
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  default-extensions:
+      DataKinds
+      FlexibleContexts
+      GADTs
+      LambdaCase
+      PolyKinds
+      RankNTypes
+      ScopedTypeVariables
+      TypeApplications
+      TypeOperators
+      TypeFamilies
+      BlockArguments
+      OverloadedStrings
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -flate-specialise -fspecialise-aggressively -fplugin=Polysemy.Plugin -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       KolyaBot
-    , base
+    , base >=4.9
+    , calamity
+    , data-default
+    , data-flags
     , di
+    , di-polysemy
     , generic-lens
     , lens
     , polysemy
+    , polysemy-plugin
     , text
     , text-show
   default-language: Haskell2010
